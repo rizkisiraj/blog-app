@@ -1,0 +1,40 @@
+{
+    "data" : [
+        {
+            "id": "how-to-train-your-cat",
+            "title" : "How to train your cat",
+            "text": "She didn't understand how changed worked. When she looked at today compared to yesterday, there was nothing that she could see that was different. Yet, when she looked at today compared to last year, she couldn't see how anything was ever the same.",
+            "category" : "technology",
+            "date" : "22 Agustus 2022",
+            "writer" : "Siraj Rizki",
+            "image" : "https://picsum.photos/200/300"
+        },
+        {
+            "id": "how-to-train-your-son",
+            "title" : "How to train your son",
+            "text": "She didn't understand how changed worked. When she looked at today compared to yesterday, there was nothing that she could see that was different. Yet, when she looked at today compared to last year, she couldn't see how anything was ever the same.",
+            "category" : "technology",
+            "date" : "22 Agustus 2022",
+            "writer" : "Siraj Rizki",
+            "image" : "https://picsum.photos/200/300"
+        },
+        {
+            "id": "how-to-train-your-dragon",
+            "title" : "How to train your dragon",
+            "text": "She didn't understand how changed worked. When she looked at today compared to yesterday, there was nothing that she could see that was different. Yet, when she looked at today compared to last year, she couldn't see how anything was ever the same.",
+            "category" : "technology",
+            "date" : "22 Agustus 2022",
+            "writer" : "Siraj Rizki",
+            "image" : "https://picsum.photos/200/300"
+        },
+        {
+            "id": "how-to-get-girls",
+            "title" : "How to get girls",
+            "text": "She didn't understand how changed worked. When she looked at today compared to yesterday, there was nothing that she could see that was different. Yet, when she looked at today compared to last year, she couldn't see how anything was ever the same.",
+            "category" : "technology",
+            "date" : "22 Agustus 2022",
+            "writer" : "Siraj Rizki",
+            "image" : "https://picsum.photos/200/300"
+        }
+    ]
+}
