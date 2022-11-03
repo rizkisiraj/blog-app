@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Cara Menjadi Manusia Ganteng",
+    "writer": "Hans Alkatiri",
+    "category": ["technology"],
+    "cover": "images.jpg"
+}
