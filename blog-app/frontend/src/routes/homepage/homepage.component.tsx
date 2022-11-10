@@ -1,11 +1,13 @@
+import { useSelector } from "react-redux";
 import ArticleCard from "../../components/article-card/article-card.component";
 import Jumbotron from "../../components/jumbotron/jumbotron.component";
 import Sidebar from "../../components/sidebar/sidebar.component";
-import data from "../../dummyData.json"
+import postSelector from "../../stores/posts/post.selector";
 import ArticleContent from "../../utils/interfaces/articleContent.interface";
 
 const Homepage:React.FC = () => {
-    const articleContents:ArticleContent[] = data.data;
+    const postObject = useSelector(postSelector);
+    const articleContents:ArticleContent[] = postObject.posts;
 
     return (
         <>
@@ -19,7 +21,7 @@ const Homepage:React.FC = () => {
               </div>
               <div className="w-full grid-cols-1 auto-rows-cardHeight grid gap-2 md:grid-cols-2">
                 {
-                  articleContents.map(articleContent => <ArticleCard article={articleContent} key={articleContent.id} />)
+                  articleContents.map(articleContent => <ArticleCard article={articleContent} key={articleContent._id} />)
                 }
               </div>
             </main>

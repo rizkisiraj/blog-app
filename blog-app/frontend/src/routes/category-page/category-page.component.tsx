@@ -23,7 +23,7 @@ const CategoryPage = () => {
           </div>
           <div className="w-full grid-cols-1 auto-rows-cardHeight grid gap-2 md:grid-cols-2">
             {
-              articles.map(article => <ArticleCard article={article} key={article.id} />)
+              articles.map(article => <ArticleCard article={article} key={article._id} />)
             }
           </div>
       </main>

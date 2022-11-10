@@ -4,7 +4,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import postRoute from './routes/postRoute';
 import routerLinks from './utils/linkRoutes';
-import bodyParser from 'body-parser'
+import bodyParser from 'body-parser';
+import cors from 'cors'
 
 const app:Express = express();
 dotenv.config();
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO_DB_URL,{
 const port = 5000;
 
 app.use(express.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(routerLinks.POSTS, postRoute);
 

@@ -1,12 +1,13 @@
 import ArticleContent from '../../utils/interfaces/articleContent.interface';
 import MarkdownPreview from '@uiw/react-markdown-preview'
+import convertDate from '../../utils/functions/convertDate';
 
 interface Props {
   article:ArticleContent
 }
 
 const ArticleSection:React.FC<Props> = ({article}:Props) => {
-   const { category, date, id, image, text, title, writer } = article;
+   const { category, createdAt, _id, cover, text, title, writer } = article;
 
     return (
       <section className="w-full">
@@ -14,10 +15,13 @@ const ArticleSection:React.FC<Props> = ({article}:Props) => {
           <span className="text-sm">{`home > ${category} > ${title}`}</span>
         </div>
         <div className="w-full mb-4">
+        <div className='w-full mb-4 overflow-hidden rounded-lg'>
+          <img src={cover} alt="cover" className='w-full' />
+        </div>
           <h2 className="font-bold text-3xl capitalize mb-2">{title}</h2>
           <div className="flex">
             <span className="block mr-4">{`By ${writer}`}</span>
-            <span className="block">{date}</span>
+            <span className="block">{convertDate(createdAt)}</span>
           </div>
         </div>
         <MarkdownPreview source={text} />

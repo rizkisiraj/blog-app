@@ -17,7 +17,7 @@ const Sidebar:React.FC = () => {
       <div>
         {
           articles.map(article => (
-            <PopularCard article={article} key={article.id} />
+            <PopularCard article={article} key={article._id} />
           ))
         }
       </div>

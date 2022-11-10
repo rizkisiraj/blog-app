@@ -4,8 +4,19 @@ import Navigation from './routes/navigation/navigation.component';
 import ArticlePage from './routes/article-page/article-page.component';
 import WritePage from './routes/write-page/write-page.component';
 import CategoryPage from './routes/category-page/category-page.component';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import { setPosts } from './stores/posts/postAction';
 
 function App() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/posts/`).then(({ data }) => {
+      dispatch(setPosts(data))
+    })
+  },[dispatch])
+
   return (
     <Routes>
       <Route path='/' element={<Navigation />}>

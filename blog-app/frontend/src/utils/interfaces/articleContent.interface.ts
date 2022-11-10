@@ -2,10 +2,10 @@ interface ArticleContent {
     title:string;
     text:string;
     category:string;
-    date:string;
+    createdAt:string;
     writer:string;
-    image:string;
-    id:string;
+    cover:string;
+    _id:string;
 }
 
 export default ArticleContent;

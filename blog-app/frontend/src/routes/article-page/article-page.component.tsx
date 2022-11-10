@@ -1,9 +1,8 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArticleSection from "../../components/article-section/article-section.component";
 import Sidebar from "../../components/sidebar/sidebar.component";
-import data from '../../dummyData.json'
-import ArticleContent from "../../utils/interfaces/articleContent.interface";
 
 const ArticlePage:React.FC = () => {
   const { articleId } = useParams();
@@ -11,11 +10,12 @@ const ArticlePage:React.FC = () => {
   
   
   useEffect(() => {
-    const articleToRead = data.data.find(article => {
-      return article.id === articleId;
-    })
+    const fetchArticle = async (articleId:string | undefined) => {
+      axios.get(`http://localhost:5000/api/posts/${articleId}`)
+      .then(({data}) => setArticle(data));
+    }
 
-    setArticle(articleToRead);
+    fetchArticle(articleId)
   },[articleId])
 
   return (
