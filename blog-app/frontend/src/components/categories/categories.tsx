@@ -1,12 +1,12 @@
 interface Props {
-  categories:String
+  categories:any
 }
 
 
 const Categories:React.FC<Props> = ({ categories }:Props) => (
     <div className="w-full flex justify-between">
-        <p>{categories}</p>
-        <span>(0)</span>
+        <p>{categories.name}</p>
+        <span>({categories.quantity})</span>
     </div>
 )
 

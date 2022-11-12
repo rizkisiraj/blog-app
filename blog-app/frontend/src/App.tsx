@@ -8,12 +8,19 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { setPosts } from './stores/posts/postAction';
+import { setCats } from './stores/categories/categories.action';
 
 function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     axios.get(`http://localhost:5000/api/posts/`).then(({ data }) => {
       dispatch(setPosts(data))
+    })
+  },[dispatch])
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/categories/`).then(({ data }) => {
+      dispatch(setCats(data))
     })
   },[dispatch])
 
