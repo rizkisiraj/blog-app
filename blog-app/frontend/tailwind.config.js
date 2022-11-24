@@ -12,6 +12,9 @@ module.exports = {
       'sans': ['Poppins', 'sans-serif']
     },
     extend: {
+      height: {
+        'navHeight': 'calc(100vh - 64px)'
+      },
       gridAutoRows: {
         'cardHeight': '400px'
       },

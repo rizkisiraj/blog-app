@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa'
+import MobileNav from '../mobile-nav/mobileNav.component';
+import { useState } from 'react';
 
 const Header:React.FC = () => {
-  
-
+  const [nav, setNav] = useState<boolean>(false);
+  const mobileHandler = () => setNav(!nav);
 
   return (
       <header className="w-full h-16 p-4 xl:px-40 font-sans flex justify-between items-center bg-emerald-500 absolute top-0">
+        <MobileNav nav={nav} setNav={mobileHandler} />
         <div>
           <h1 className="font-bold text-lg text-white">Blog App</h1>
         </div>
-        <div className="lg:hidden">
+        <button aria-label='menu-button' className="lg:hidden" onClick={mobileHandler}>
           <div className="bg-white w-11 h-1 mb-2"></div>
           <div className="bg-white w-11 h-1 mb-2"></div>
           <div className="bg-white w-11 h-1"></div>
-        </div>
+        </button>
         <nav className="hidden lg:block text-white">
           <ul className='flex items-center gap-4'>
             <li><Link to={"/"}>Beranda</Link></li>

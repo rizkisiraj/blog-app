@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 interface Props {
   categories:any
 }
@@ -5,7 +7,7 @@ interface Props {
 
 const Categories:React.FC<Props> = ({ categories }:Props) => (
     <div className="w-full flex justify-between">
-        <p>{categories.name}</p>
+        <Link to={`/${categories.name}`}>{categories.name}</Link>
         <span>({categories.quantity})</span>
     </div>
 )

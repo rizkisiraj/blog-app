@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import data from '../../dummyData.json'
 import ArticleContent from '../../utils/interfaces/articleContent.interface';
 import ArticleCard from '../../components/article-card/article-card.component';
 import Sidebar from '../../components/sidebar/sidebar.component';
+import axios from 'axios';
 
 const CategoryPage = () => {
-  const { categoryId } = useParams();
+  const { categoryId } = useParams<any>();
   const [articles, setArticles] = useState<ArticleContent[]>([]);
 
   useEffect(() => {
-    const newArticle = data.data.filter(article => article.category === categoryId);
-
-    setArticles(newArticle);
+    const fetchArticlesWithCategories = async (categoryId:any) => {
+      const { data } = await axios.get(`http://localhost:5000/api/posts?cat=${categoryId}`);
+      setArticles(data)
+    }
+    fetchArticlesWithCategories(categoryId);
   },[categoryId])
 
   return (
@@ -23,7 +25,7 @@ const CategoryPage = () => {
           </div>
           <div className="w-full grid-cols-1 auto-rows-cardHeight grid gap-2 md:grid-cols-2">
             {
-              articles.map(article => <ArticleCard article={article} key={article._id} />)
+             articles && articles.map(article => <ArticleCard article={article} key={article._id} />)
             }
           </div>
       </main>

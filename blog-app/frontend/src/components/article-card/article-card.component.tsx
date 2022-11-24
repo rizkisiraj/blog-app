@@ -21,7 +21,7 @@ const ArticleCard:React.FC<Props> = ({article}:Props) => {
             <p className="text-sm">{convertDate(createdAt)}</p>
             </div>
             <div>
-              <Link to={`${category}/${_id}`}>
+              <Link to={`/${category}/${_id}`}>
               <h3 className="text-xl font-bold">{title}</h3>
               </Link>
               <p className="text-sm"><span className="font-bold">By</span> {writer}</p>
